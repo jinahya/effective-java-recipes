@@ -15,13 +15,25 @@
  */
 package com.github.jinahya.recipes;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import org.slf4j.Logger;
+import static org.slf4j.LoggerFactory.getLogger;
 import org.testng.annotations.Test;
 
 public class NutritionFactsTest {
 
+    private static final Logger logger = getLogger(lookup().lookupClass());
+
+    // -------------------------------------------------------------------------
     @Test
-    public void cocaCola() {
+    public void cocaColaWithConstructor() {
         final NutritionFacts cocaCola
             = new NutritionFacts(240, 8, 100, 0, 35, 27);
+    }
+
+    @Test
+    public void cocaColaWithBuilder() {
+        final NutritionFacts cocaCola = new NutritionFacts.Builder(240, 8).
+            calories(100).sodium(35).carbohydrate(27).build();
     }
 }
