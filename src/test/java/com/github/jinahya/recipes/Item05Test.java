@@ -20,7 +20,7 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
-public class Item5Test {
+public class Item05Test {
 
     // http://java-performance.info/string-intern-in-java-6-7-8/
     @Test
