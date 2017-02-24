@@ -15,8 +15,6 @@
  */
 package com.github.jinahya.recipes;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
@@ -25,20 +23,17 @@ public class Item05Test {
     // http://java-performance.info/string-intern-in-java-6-7-8/
     @Test
     public void compareStrings() {
-        assertEquals("aaa", "aaa");
-        assertEquals("aaa", new String("aaa"));
-        assertEquals(new String("aaa"), new String("aaa"));
+        assertTrue("aaa".equals("aaa"));
+        assertTrue("aaa".equals(new String("aaa")));
+        assertTrue(new String("aaa").equals(new String("aaa")));
         assertTrue("aaa" == "aaa");
-        assertFalse(new String("aaa") == new String("aaa"));
+        assertTrue(new String("aaa") != new String("aaa"));
     }
 
     @Test
     public void compareIntegers() {
-        assertEquals(127, 127);
-        assertEquals(new Integer(127), new Integer(127));
-        assertTrue(127 == 127); // 127 == 127
-        assertFalse(new Integer(127) == new Integer(127));
+        assertTrue(127 == 127);
         assertTrue(Integer.valueOf(127) == Integer.valueOf(127)); // why?
-        assertFalse(Integer.valueOf(128) == Integer.valueOf(128)); // why not?
+        assertTrue(Integer.valueOf(128) != Integer.valueOf(128)); // why not?
     }
 }

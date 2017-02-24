@@ -82,6 +82,7 @@ public class NutritionFacts {
                           final int calories, final int fat, final int sodium,
                           final int carbohydrate) {
         super();
+
         this.servingSize = servingSize;
         this.servings = servings;
         this.calories = calories;
