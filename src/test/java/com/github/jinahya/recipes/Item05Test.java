@@ -15,6 +15,7 @@
  */
 package com.github.jinahya.recipes;
 
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
@@ -27,13 +28,13 @@ public class Item05Test {
         assertTrue("aaa".equals(new String("aaa")));
         assertTrue(new String("aaa").equals(new String("aaa")));
         assertTrue("aaa" == "aaa");
-        assertTrue(new String("aaa") != new String("aaa"));
+        assertFalse(new String("aaa") == new String("aaa"));
     }
 
     @Test
-    public void compareIntegers() {
+    public void compareIntegers() { 
         assertTrue(127 == 127);
         assertTrue(Integer.valueOf(127) == Integer.valueOf(127)); // why?
-        assertTrue(Integer.valueOf(128) != Integer.valueOf(128)); // why not?
+        assertFalse(Integer.valueOf(128) == Integer.valueOf(128)); // why not?
     }
 }
