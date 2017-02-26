@@ -47,7 +47,6 @@ public class Acount2Test {
                     try {
                         Thread.sleep(10L);
                     } catch (final InterruptedException ie) {
-                        ie.printStackTrace(System.err);
                         fail("interrupted", ie);
                     }
                 }
