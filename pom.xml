@@ -9,7 +9,7 @@
   </parent>
 
   <groupId>com.github.jinahya</groupId>
-  <artifactId>effective-java-recipes</artifactId>
+  <artifactId>effective-java-recipes-second-edition</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
