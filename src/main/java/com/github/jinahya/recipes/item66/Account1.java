@@ -16,7 +16,6 @@
 package com.github.jinahya.recipes.item66;
 
 import static java.lang.invoke.MethodHandles.lookup;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
@@ -27,8 +26,6 @@ public class Account1 {
 
     // -------------------------------------------------------------------------
     public void deposit(final int amount) {
-//        logger.log(Level.INFO, "{0}/deposit({1})",
-//                   new Object[]{Thread.currentThread().getId(), amount});
         if (amount < 0) {
             throw new IllegalArgumentException("amount(" + amount + ")  0");
         }
@@ -36,8 +33,6 @@ public class Account1 {
     }
 
     public void withdraw(final int amount) {
-//        logger.log(Level.INFO, "{0}/withdraw({1})",
-//                   new Object[]{Thread.currentThread().getId(), amount});
         if (amount < 0) {
             throw new IllegalArgumentException("amount(" + amount + ")  0");
         }
