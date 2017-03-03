@@ -46,7 +46,7 @@ public class Acount2Test {
                         account.deposit(100);
                     }
                     try {
-                        Thread.sleep(current().nextLong(100L));
+                        TimeUnit.MILLISECONDS.sleep(current().nextLong(100L));
                     } catch (final InterruptedException ie) {
                         fail("interrupted", ie);
                     }
