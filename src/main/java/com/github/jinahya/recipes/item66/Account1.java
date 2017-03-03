@@ -27,14 +27,14 @@ public class Account1 {
     // -------------------------------------------------------------------------
     public void deposit(final int amount) {
         if (amount < 0) {
-            throw new IllegalArgumentException("amount(" + amount + ")  0");
+            throw new IllegalArgumentException("amount(" + amount + ") <  0");
         }
         balance += amount;
     }
 
     public void withdraw(final int amount) {
         if (amount < 0) {
-            throw new IllegalArgumentException("amount(" + amount + ")  0");
+            throw new IllegalArgumentException("amount(" + amount + ") < 0");
         }
         balance -= amount;
     }

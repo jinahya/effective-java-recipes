@@ -18,6 +18,7 @@ package com.github.jinahya.recipes.item66;
 import static java.lang.invoke.MethodHandles.lookup;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import static java.util.concurrent.ThreadLocalRandom.current;
 import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import static org.slf4j.LoggerFactory.getLogger;
@@ -33,8 +34,8 @@ public class Acount1Test {
     public void test() throws InterruptedException {
         final Account1 account = new Account1();
         final int threads = 100;
-        final int rounds = 100;
         final ExecutorService executor = Executors.newFixedThreadPool(threads);
+        final int rounds = 100;
         for (int i = 0; i < threads; i++) {
             executor.submit(() -> {
                 for (int j = 0; j < rounds; j++) {
@@ -44,9 +45,10 @@ public class Acount1Test {
                         account.deposit(100);
                     }
                     try {
-                        Thread.sleep(10L);
+                        Thread.sleep(current().nextLong(100L));
                     } catch (final InterruptedException ie) {
                         fail("interrupted", ie);
+                        return;
                     }
                 }
             });

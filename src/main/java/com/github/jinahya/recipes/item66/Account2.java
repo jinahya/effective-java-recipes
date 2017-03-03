@@ -28,4 +28,9 @@ public class Account2 extends Account1 {
             super.deposit(amount);
         }
     }
+
+    @Override
+    public synchronized long getBalance() {
+        return super.getBalance();
+    }
 }
