@@ -15,7 +15,7 @@
  */
 package com.github.jinahya.recipes.item09;
 
- public class PhoneNumber3 extends PhoneNumber2 {
+public class PhoneNumber3 extends PhoneNumber2 {
 
     public PhoneNumber3(final int areaCode, final int prefix,
                         final int lineNumber) {

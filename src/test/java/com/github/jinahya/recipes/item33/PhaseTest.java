@@ -13,30 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.jinahya.recipes.item08;
+package com.github.jinahya.recipes.item33;
 
+import com.github.jinahya.recipes.item33.Phase.Transition;
 import static java.lang.invoke.MethodHandles.lookup;
-import java.util.ArrayList;
-import java.util.List;
 import org.slf4j.Logger;
 import static org.slf4j.LoggerFactory.getLogger;
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
-public class CaseInsensitiveString1Test {
+/**
+ *
+ * @author Jin Kwon &lt;onacit at gmail.com&gt;
+ */
+public class PhaseTest {
 
     private static final Logger logger = getLogger(lookup().lookupClass());
 
+    // -------------------------------------------------------------------------
     @Test
-    public void notSymmetric() {
-        final CaseInsensitiveString1 cis = new CaseInsensitiveString1("Polish");
-        final String s = "polish";
-        assertTrue(cis.equals(s));
-        assertFalse(s.equals(cis));
-        final List<CaseInsensitiveString1> list = new ArrayList<>();
-        list.add(cis);
-        final boolean contains = list.contains(s);
-        logger.debug("contains: {}", contains);
+    public static void printPhases() {
+        for (final Phase value : Phase.values()) {
+            logger.debug("Phase: {}", value);
+        }
+    }
+
+    @Test
+    public static void printTransitions() {
+        for (final Transition value : Transition.values()) {
+            logger.debug("Transition: {}", value);
+        }
     }
 }

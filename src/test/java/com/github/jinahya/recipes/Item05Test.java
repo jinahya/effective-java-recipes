@@ -32,7 +32,7 @@ public class Item05Test {
     }
 
     @Test
-    public void compareIntegers() { 
+    public void compareIntegers() {
         assertTrue(127 == 127);
         assertTrue(Integer.valueOf(127) == Integer.valueOf(127)); // why?
         assertFalse(Integer.valueOf(128) == Integer.valueOf(128)); // why not?
