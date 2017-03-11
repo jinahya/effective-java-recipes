@@ -20,6 +20,33 @@ import org.testng.annotations.Test;
 public class HerbTest {
 
     @Test
+    public static void applyFunction() {
+        for (final Herb.Type type : Herb.Type.values()) {
+            Herb.applyHerbsOfType(
+                type,
+                herbs -> {
+                    herbs.forEach(System.out::println);
+                    return null;
+                }
+            );
+        }
+    }
+
+    @Test
+    public static void applyBiFunction() {
+        for (final Herb.Type type : Herb.Type.values()) {
+            Herb.applyHerbsOfType(
+                type,
+                (herbs, u) -> {
+                    herbs.forEach(System.out::println);
+                    return null;
+                },
+                null
+            );
+        }
+    }
+
+    @Test
     public static void acceptConsumer() {
         for (final Herb.Type type : Herb.Type.values()) {
             Herb.acceptHerbsOfType(

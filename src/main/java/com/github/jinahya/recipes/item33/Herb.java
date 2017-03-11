@@ -67,13 +67,13 @@ public class Herb {
     }
 
     public static <U, R> R applyHerbsOfType(
-        final Type type, final BiFunction<Set<? super Herb>, U, R> function,
+        final Type type, final BiFunction<? super Set<Herb>, U, R> function,
         final U u) {
         return requireNonNull(function).apply(getHerbsByType(type), u);
     }
 
     public static <R> R applyHerbsOfType(
-        final Type type, final Function<Set<? super Herb>, R> function) {
+        final Type type, final Function<? super Set<Herb>, R> function) {
         if (current().nextBoolean()) {
             return applyHerbsOfType(
                 type, (herbs, u) -> function.apply(herbs), null);
@@ -82,7 +82,7 @@ public class Herb {
     }
 
     public static <U> void acceptHerbsOfType(
-        final Type type, final BiConsumer<Set<? super Herb>, U> consumer,
+        final Type type, final BiConsumer<? super Set<Herb>, U> consumer,
         final U u) {
         if (current().nextBoolean()) {
             applyHerbsOfType(
@@ -97,7 +97,7 @@ public class Herb {
     }
 
     public static void acceptHerbsOfType(
-        final Type type, final Consumer<Set<? super Herb>> consumer) {
+        final Type type, final Consumer<? super Set<Herb>> consumer) {
         if (current().nextBoolean()) {
             acceptHerbsOfType(type, (herbs, u) -> consumer.accept(herbs), null);
             return;
