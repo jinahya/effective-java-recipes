@@ -15,57 +15,21 @@
  */
 package com.github.jinahya.recipes.item33;
 
+import static java.lang.invoke.MethodHandles.lookup;
+import org.slf4j.Logger;
+import static org.slf4j.LoggerFactory.getLogger;
 import org.testng.annotations.Test;
 
 public class HerbTest {
 
-    @Test
-    public static void applyFunction() {
-        for (final Herb.Type type : Herb.Type.values()) {
-            Herb.applyHerbsOfType(
-                type,
-                herbs -> {
-                    herbs.forEach(System.out::println);
-                    return null;
-                }
-            );
-        }
-    }
+    private static final Logger logger = getLogger(lookup().lookupClass());
 
+    // -------------------------------------------------------------------------
     @Test
-    public static void applyBiFunction() {
+    public static void getHerbsByType() {
         for (final Herb.Type type : Herb.Type.values()) {
-            Herb.applyHerbsOfType(
-                type,
-                (herbs, u) -> {
-                    herbs.forEach(System.out::println);
-                    return null;
-                },
-                null
-            );
-        }
-    }
-
-    @Test
-    public static void acceptConsumer() {
-        for (final Herb.Type type : Herb.Type.values()) {
-            Herb.acceptHerbsOfType(
-                type,
-                herbs -> {
-                    herbs.forEach(System.out::println);
-                });
-        }
-    }
-
-    @Test
-    public static void acceptBiConsumer() {
-        for (final Herb.Type type : Herb.Type.values()) {
-            Herb.acceptHerbsOfType(
-                type,
-                (herbs, u) -> {
-                    herbs.forEach(System.out::println);
-                },
-                null);
+            logger.debug("herbs by type({}): {}",
+                         type, Herb.getHerbsByType(type));
         }
     }
 }
